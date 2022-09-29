@@ -4,6 +4,24 @@
 ```mermaid
 erDiagram
 
+    users {
+        int id PK
+        dateTime created_at
+        dateTime updated_at
+        varchar email
+        text password_hash
+        text password_salt
+    }
+    
+    user_details ||--|| users : user_id
+    user_details {
+        int id PK
+        dateTime created_at
+        dateTime updated_at
+        varchar role    
+        int user_id FK
+    }
+
     beasts_classes {
         int id PK
         dateTime created_at
@@ -52,7 +70,7 @@ erDiagram
         text tactic_description
     }
     
-    beast_details_to_drops ||--|| beast_details : beast_details_id
+    beast_details_to_drops }|--|| beast_details : beast_details_id
     beast_details_to_drops }|--|| drops : drops_id
     beast_details_to_drops {
         int id PK
@@ -62,7 +80,7 @@ erDiagram
         int drops_id FK
     }
     
-    beast_details_to_locations ||--|| beast_details : beast_details_id
+    beast_details_to_locations }|--|| beast_details : beast_details_id
     beast_details_to_locations }|--|| locations : location_id
     beast_details_to_locations {
         int id PK
@@ -72,7 +90,7 @@ erDiagram
         int location_id FK
     }
     
-    beast_details_to_weaknesses ||--|| beast_details : beast_details_id
+    beast_details_to_weaknesses }|--|| beast_details : beast_details_id
     beast_details_to_weaknesses }|--|| weaknesses : weakness_id
     beast_details_to_weaknesses {
         int id PK
