@@ -24,6 +24,7 @@
     "@nestjs/common": "9.1.2",
     "@nestjs/core": "9.1.2",
     "@nestjs/platform-express": "9.1.2",
+    "dotenv": "16.0.3",
     "knex": "2.3.0",
     "objection": "3.0.1",
     "reflect-metadata": "0.1.13",
