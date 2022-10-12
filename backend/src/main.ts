@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import {AppModule} from './app.module';
+import {AppModule} from './modules/app.module';
 import {Model} from 'objection'
 import knexConfig from "../knexfile";
 import {ENV} from "./common/enums/enums";
