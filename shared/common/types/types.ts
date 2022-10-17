@@ -1,1 +1,2 @@
-export {type DropsCreateDto, type DropsGetAllItem, type DropsGetAll} from './drops/drops'
+export {type DropsCreateDto, type DropsGetAllItem, type DropsGetAll} from './drops/drops';
+export {type WeaknessesCreateDto, type WeaknessesGetAllResponseDto, type WeaknessesGetAllItemResponseDto} from './weaknesses/weaknesses';
