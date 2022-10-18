@@ -1,4 +1,4 @@
-type BeastDetailsGetAllItem = {
+type BeastsDetailsGetAllItem = {
     id: number;
     description: string;
     inGameDescription: string;
@@ -6,4 +6,4 @@ type BeastDetailsGetAllItem = {
     tacticDescription: string;
 }
 
-export {type BeastDetailsGetAllItem}
+export {type BeastsDetailsGetAllItem}
