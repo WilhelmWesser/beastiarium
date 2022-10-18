@@ -9,6 +9,7 @@ erDiagram
         dateTime created_at
         dateTime updated_at
         varchar email
+        varchar full_name
         text password_hash
         text password_salt
     }
