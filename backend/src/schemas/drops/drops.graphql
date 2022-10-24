@@ -1,26 +1,26 @@
 type Drop {
-    id: ID!
-    createdAt: String!
-    updatedAt: String!
-    name: String!
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
 }
 
 input NewDrop {
-    name: String!
+  name: String!
 }
 
 input UpdateDrop {
-    id: ID!
-    name: String!
+  id: ID!
+  name: String!
 }
 
-type Query {
-    drops: [Drop!]!
-    drop(id: ID!): Drop
+extend type Query {
+  drops: [Drop!]!
+  drop(id: ID!): Drop
 }
 
-type Mutation {
-    createDrop(input: NewDrop): Drop!
-    updateDrop(input: UpdateDrop): Drop!
-    deleteDrop(id: ID!): Drop!
+extend type Mutation {
+  createDrop(input: NewDrop): Drop!
+  updateDrop(input: UpdateDrop): Drop!
+  deleteDrop(id: ID!): Drop!
 }
