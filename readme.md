@@ -65,6 +65,7 @@ erDiagram
         int id PK
         dateTime created_at
         dateTime updated_at
+        int beast_id FK
         text description
         text in_game_description
         varchar imgLink
