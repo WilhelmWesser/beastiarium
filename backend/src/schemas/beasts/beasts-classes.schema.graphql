@@ -1,0 +1,26 @@
+type BeastClass {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
+}
+
+input NewBeastClass {
+  name: String!
+}
+
+input UpdateBeastClass {
+  id: ID!
+  name: String!
+}
+
+extend type Query {
+  beastsClasses: [BeastClass!]!
+  beastClass(id: ID!): BeastClass
+}
+
+extend type Mutation {
+  createBeastClass(input: NewBeastClass!): BeastClass!
+  updateBeastClass(input: UpdateBeastClass!): BeastClass!
+  deleteBeastClass(id: ID!): BeastClass!
+}

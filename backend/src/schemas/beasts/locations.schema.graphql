@@ -1,0 +1,26 @@
+type Location {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
+}
+
+input NewLocation {
+  name: String!
+}
+
+input UpdateLocation {
+  id: ID!
+  name: String!
+}
+
+extend type Query {
+  weaknesses: [Location!]!
+  weakness(id: ID!): Location
+}
+
+extend type Mutation {
+  createWeakness(input: NewLocation!): Location!
+  updateWeakness(input: UpdateLocation!): Location!
+  deleteWeakness(id: ID!): Location!
+}
