@@ -29,12 +29,11 @@ input UpdateBeastDetails {
 }
 
 extend type Query {
-  beastsClasses: [BeastDetails!]!
-  beastClass(id: ID!): BeastDetails
+  beastDetails(id: ID!): BeastDetails
 }
 
 extend type Mutation {
-  createBeastClass(input: NewBeastDetails!): BeastDetails!
-  updateBeastClass(input: UpdateBeastDetails!): BeastDetails!
-  deleteBeastClass(id: ID!): BeastDetails!
+  createBeastDetails(input: NewBeastDetails!): BeastDetails!
+  updateBeastDetails(input: UpdateBeastDetails!): BeastDetails!
+  deleteBeastDetails(id: ID!): BeastDetails!
 }

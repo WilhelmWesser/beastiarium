@@ -1,8 +1,10 @@
-type Beasts {
+# import BeastClass from './beasts-classes.schema.graphql';
+
+type Beast {
   id: ID!
   createdAt: String!
   updatedAt: String!
-  beastClassId: Int!
+  beastClass: BeastClass!
   name: String!
 }
 
@@ -18,12 +20,12 @@ input UpdateBeast {
 }
 
 extend type Query {
-  beastsClasses: [BeastDetails!]!
-  beastClass(id: ID!): BeastDetails
+  beasts: [Beast!]!
+  beast(id: ID!): Beast
 }
 
 extend type Mutation {
-  createBeastClass(input: NewBeast!): Beasts!
-  updateBeastClass(input: UpdateBeast!): Beasts!
-  deleteBeastClass(id: ID!): Beasts!
+  createBeast(input: NewBeast!): Beast!
+  updateBeast(input: UpdateBeast!): Beast!
+  deleteBeast(id: ID!): Beast!
 }

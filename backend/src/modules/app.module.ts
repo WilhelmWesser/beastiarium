@@ -5,19 +5,21 @@ import { ENV } from '../common/enums/enums';
 import { join } from 'path';
 import { PrismaService } from 'src/services/services';
 import { AppResolver } from 'src/resolvers/app.resolver';
+import { BeastModule } from './beast.module';
 
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       playground: ENV.APP.NODE_ENV === 'development',
-      typePaths: ['src/schemas/*.graphql'],
+      typePaths: ['src/schemas/**/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'src/schemas/graphql.ts'),
         outputAs: 'class',
       },
       installSubscriptionHandlers: true,
     }),
+    BeastModule,
   ],
   controllers: [],
   providers: [PrismaService, AppResolver],
