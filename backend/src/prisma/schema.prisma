@@ -7,30 +7,121 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model drops {
-    id Int @id @default(autoincrement())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
-    name String
+model Drop {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+  name      String
+
+  BeastDetailsToDrops BeastDetailsToDrops[]
+
+  @@map("drops")
 }
 
-model weaknesses {
-    id Int @id @default(autoincrement())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
-    name String
+model Weakness {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+  name      String
+
+  BeastDetailsToWeaknesses BeastDetailsToWeaknesses[]
+
+  @@map("weaknesses")
 }
 
-model locations {
-    id Int @id @default(autoincrement())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
-    name String
+model Location {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+  name      String
+
+  BeastDetailsToLocations BeastDetailsToLocations[]
+
+  @@map("locations")
 }
 
-model beasts_classes {
-    id Int @id @default(autoincrement())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
-    name String
+model BeastClass {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+  name      String
+
+  Beast Beast[]
+
+  @@map("beasts_classes")
+}
+
+model Beast {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+  name      String
+
+  BeastClass   BeastClass @relation(fields: [beastClassId], references: [id])
+  beastClassId Int        @map("beast_class_id")
+
+  BeastDetails BeastDetails?
+
+  @@map("beasts")
+}
+
+model BeastDetails {
+  id                Int      @id @default(autoincrement())
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @default(now()) @map("updated_at")
+  description       String
+  inGameDescription String   @map("in_game_description")
+  imgLink           String   @map("img_link")
+  tacticDescription String   @map("tactic_description")
+
+  Beast   Beast @relation(fields: [beastId], references: [id])
+  beastId Int   @unique() @map("beast_id")
+
+  BeastDetailsToDrops BeastDetailsToDrops[]
+  BeastDetailsToWeaknesses BeastDetailsToWeaknesses[]
+  BeastDetailsToLocations BeastDetailsToLocations[]
+
+  @@map("beasts_details")
+}
+
+model BeastDetailsToDrops {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+
+  BeastDetailsToDrops BeastDetails @relation(fields: [beastDetailsId], references: [id])
+  beastDetailsId      Int          @map("beast_details_id")
+
+  Drop   Drop @relation(fields: [dropId], references: [id])
+  dropId Int  @map("drop_id")
+
+  @@map("beast_details_to_drops")
+}
+
+model BeastDetailsToWeaknesses {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+
+  BeastDetailsToWeaknesses BeastDetails @relation(fields: [beastDetailsId], references: [id])
+  beastDetailsId      Int          @map("beast_details_id")
+
+  Weakness   Weakness @relation(fields: [weaknessId], references: [id])
+  weaknessId Int  @map("weakness_id")
+
+  @@map("beast_details_to_weaknesses")
+}
+
+model BeastDetailsToLocations {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+
+  BeastDetailsToLocations BeastDetails @relation(fields: [beastDetailsId], references: [id])
+  beastDetailsId      Int          @map("beast_details_id")
+
+  Location   Location @relation(fields: [locationId], references: [id])
+  locationId Int  @map("location_id")
+
+  @@map("beast_details_to_locations")
 }

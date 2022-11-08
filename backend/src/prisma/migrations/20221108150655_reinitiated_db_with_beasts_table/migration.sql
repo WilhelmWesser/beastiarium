@@ -1,24 +1,3 @@
-/*
-  Warnings:
-
-  - You are about to drop the `BeastClass` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Drop` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Location` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Weakness` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropTable
-DROP TABLE "BeastClass";
-
--- DropTable
-DROP TABLE "Drop";
-
--- DropTable
-DROP TABLE "Location";
-
--- DropTable
-DROP TABLE "Weakness";
-
 -- CreateTable
 CREATE TABLE "drops" (
     "id" SERIAL NOT NULL,
@@ -58,3 +37,20 @@ CREATE TABLE "beasts_classes" (
 
     CONSTRAINT "beasts_classes_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateTable
+CREATE TABLE "beasts" (
+    "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "name" TEXT NOT NULL,
+    "beastClassId" INTEGER NOT NULL,
+
+    CONSTRAINT "beasts_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "beasts_beastClassId_key" ON "beasts"("beastClassId");
+
+-- AddForeignKey
+ALTER TABLE "beasts" ADD CONSTRAINT "beasts_beastClassId_fkey" FOREIGN KEY ("beastClassId") REFERENCES "beasts_classes"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
