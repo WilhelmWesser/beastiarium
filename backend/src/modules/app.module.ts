@@ -5,7 +5,7 @@ import { ENV } from '../common/enums/enums';
 import { join } from 'path';
 import { PrismaService } from 'src/services/services';
 import { AppResolver } from 'src/resolvers/app.resolver';
-import { BeastModule } from './beast.module';
+import { BeastModule, DropsModule } from './modules';
 
 @Module({
   imports: [
@@ -20,6 +20,7 @@ import { BeastModule } from './beast.module';
       installSubscriptionHandlers: true,
     }),
     BeastModule,
+    DropsModule,
   ],
   controllers: [],
   providers: [PrismaService, AppResolver],

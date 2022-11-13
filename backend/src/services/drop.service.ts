@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { DropsCreateDto, DropsGetAllItem } from 'src/common/types/types';
 import { PrismaService } from './services';
-import { DropsGetAllItem } from 'shared/common/types/drops/drops';
 
 @Injectable()
 export class DropsService {
   constructor(private prisma: PrismaService) {}
 
-  async getDropById(id: number): Promise<DropsGetAllItem | null> {
+  getDropById(id: number): Promise<DropsGetAllItem | null> {
     return this.prisma.drop.findUnique({
       select: {
         id: true,
@@ -36,5 +36,22 @@ export class DropsService {
     });
 
     return dropsDtos.map((dropDto) => dropDto.Drop);
+  }
+
+  createDrop(drop: DropsCreateDto): Promise<DropsGetAllItem> {
+    const { name } = drop;
+    return this.prisma.drop.create({
+      data: {
+        name,
+      },
+    });
+  }
+
+  deleteDrop(dropId: number): Promise<DropsGetAllItem> {
+    return this.prisma.drop.delete({
+      where: {
+        id: dropId,
+      },
+    });
   }
 }
