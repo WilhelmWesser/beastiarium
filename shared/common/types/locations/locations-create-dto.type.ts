@@ -1,5 +1,5 @@
-type LocationsCreateDtoType = {
-    name: string;
-}
+type LocationsCreateDto = {
+  name: string;
+};
 
-export {type LocationsCreateDtoType};
+export { type LocationsCreateDto };

@@ -10,8 +10,6 @@ export class DropsService {
     return this.prisma.drop.findUnique({
       select: {
         id: true,
-        createdAt: true,
-        updatedAt: true,
         name: true,
       },
       where: {
@@ -20,7 +18,7 @@ export class DropsService {
     });
   }
 
-  async getBeastDrops(beastDetailsId: number): Promise<DropsGetAllItem[] | []> {
+  async getBeastDrops(beastDetailsId: number): Promise<DropsGetAllItem[]> {
     const dropsDtos = await this.prisma.beastDetailsToDrops.findMany({
       where: {
         beastDetailsId,

@@ -12,8 +12,8 @@ export class DropsResolver {
   }
 
   @Query('drops')
-  beastDrops(@Args('beastId') beastId: number) {
-    return this.service.getBeastDrops(beastId);
+  beastDrops(@Args('beastDetailsId') beastDetailsId: number) {
+    return this.service.getBeastDrops(beastDetailsId);
   }
 
   @Mutation('drops')

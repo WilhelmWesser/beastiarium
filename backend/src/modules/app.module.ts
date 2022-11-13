@@ -5,7 +5,7 @@ import { ENV } from '../common/enums/enums';
 import { join } from 'path';
 import { PrismaService } from 'src/services/services';
 import { AppResolver } from 'src/resolvers/app.resolver';
-import { BeastModule, DropsModule } from './modules';
+import { BeastModule, DropsModule, LocationsModule } from './modules';
 
 @Module({
   imports: [
@@ -21,6 +21,7 @@ import { BeastModule, DropsModule } from './modules';
     }),
     BeastModule,
     DropsModule,
+    LocationsModule,
   ],
   controllers: [],
   providers: [PrismaService, AppResolver],
