@@ -1,3 +1,4 @@
 export { PrismaService } from './prisma.service';
-export { DropsService } from './drop.service';
-export { LocationsService } from './location.service';
+export { DropService } from './drop.service';
+export { LocationService } from './location.service';
+export { WeaknessService } from './weakness.service';

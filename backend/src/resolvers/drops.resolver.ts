@@ -1,10 +1,10 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { DropsCreateDto } from 'src/common/types/types';
-import { DropsService } from 'src/services/services';
+import { DropService } from 'src/services/services';
 
 @Resolver('drops')
 export class DropsResolver {
-  constructor(private readonly service: DropsService) {}
+  constructor(private readonly service: DropService) {}
 
   @Query('drops')
   dropById(@Args('id') id: number) {

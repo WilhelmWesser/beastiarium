@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import {
   LocationsCreateDto,
-  LocationsGetAllItem,
+  LocationsGetAllItemResponseDto,
 } from 'src/common/types/types';
 import { PrismaService } from './services';
 
 @Injectable()
-export class LocationsService {
+export class LocationService {
   constructor(private prisma: PrismaService) {}
 
-  getLocationById(id: number): Promise<LocationsGetAllItem | null> {
+  getLocationById(id: number): Promise<LocationsGetAllItemResponseDto | null> {
     return this.prisma.location.findUnique({
       select: {
         id: true,
@@ -23,7 +23,7 @@ export class LocationsService {
 
   async getBeastLocations(
     beastDetailsId: number,
-  ): Promise<LocationsGetAllItem[]> {
+  ): Promise<LocationsGetAllItemResponseDto[]> {
     const locationsDtos = await this.prisma.beastDetailsToLocations.findMany({
       where: {
         beastDetailsId,
@@ -41,7 +41,9 @@ export class LocationsService {
     return locationsDtos.map((dto) => dto.Location);
   }
 
-  createLocation(location: LocationsCreateDto): Promise<LocationsGetAllItem> {
+  createLocation(
+    location: LocationsCreateDto,
+  ): Promise<LocationsGetAllItemResponseDto> {
     const { name } = location;
     return this.prisma.location.create({
       data: {
@@ -50,7 +52,7 @@ export class LocationsService {
     });
   }
 
-  deleteLocation(id: number): Promise<LocationsGetAllItem> {
+  deleteLocation(id: number): Promise<LocationsGetAllItemResponseDto> {
     return this.prisma.location.delete({
       where: {
         id,

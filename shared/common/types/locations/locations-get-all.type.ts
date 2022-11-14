@@ -1,7 +1,7 @@
-import {LocationsGetAllItem} from "./locations-get-all-item.type";
+import { LocationsGetAllItemResponseDto } from "./locations-get-all-item.type";
 
-type LocationsGetAll = {
-    items: LocationsGetAllItem[];
-}
+type LocationsGetAllResponseDto = {
+  items: LocationsGetAllItemResponseDto[];
+};
 
-export {type LocationsGetAll}
+export { type LocationsGetAllResponseDto };

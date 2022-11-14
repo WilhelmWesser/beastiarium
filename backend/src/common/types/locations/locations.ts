@@ -1,5 +1,5 @@
 export {
   type LocationsCreateDto,
-  type LocationsGetAllItem,
-  type LocationsGetAll,
+  type LocationsGetAllItemResponseDto,
+  type LocationsGetAllResponseDto,
 } from 'shared/common/types/types';

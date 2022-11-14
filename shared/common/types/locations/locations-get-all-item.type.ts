@@ -1,6 +1,6 @@
-type LocationsGetAllItem = {
-    id: number;
-    name: string;
-}
+type LocationsGetAllItemResponseDto = {
+  id: number;
+  name: string;
+};
 
-export {type LocationsGetAllItem};
+export { type LocationsGetAllItemResponseDto };

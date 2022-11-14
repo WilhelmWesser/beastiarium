@@ -15,12 +15,12 @@ export {
 } from "./beasts-details/beasts-details";
 export {
   type DropsCreateDto,
-  type DropsGetAllItem,
-  type DropsGetAll,
+  type DropsGetAllItemResponseDto,
+  type DropsGetAllResponseDto,
 } from "./drops/drops";
 export {
-  type LocationsGetAll,
-  type LocationsGetAllItem,
+  type LocationsGetAllResponseDto,
+  type LocationsGetAllItemResponseDto,
   type LocationsCreateDto,
 } from "./locations/locations";
 export {

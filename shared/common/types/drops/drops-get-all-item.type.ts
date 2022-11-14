@@ -1,6 +1,6 @@
-type DropsGetAllItem = {
+type DropsGetAllItemResponseDto = {
   id: number;
   name: string;
 };
 
-export { type DropsGetAllItem };
+export { type DropsGetAllItemResponseDto };

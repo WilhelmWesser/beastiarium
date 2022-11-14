@@ -1,12 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { DropsCreateDto, DropsGetAllItem } from 'src/common/types/types';
+import {
+  DropsCreateDto,
+  DropsGetAllItemResponseDto,
+} from 'src/common/types/types';
 import { PrismaService } from './services';
 
 @Injectable()
-export class DropsService {
+export class DropService {
   constructor(private prisma: PrismaService) {}
 
-  getDropById(id: number): Promise<DropsGetAllItem | null> {
+  getDropById(id: number): Promise<DropsGetAllItemResponseDto | null> {
     return this.prisma.drop.findUnique({
       select: {
         id: true,
@@ -18,7 +21,9 @@ export class DropsService {
     });
   }
 
-  async getBeastDrops(beastDetailsId: number): Promise<DropsGetAllItem[]> {
+  async getBeastDrops(
+    beastDetailsId: number,
+  ): Promise<DropsGetAllItemResponseDto[]> {
     const dropsDtos = await this.prisma.beastDetailsToDrops.findMany({
       where: {
         beastDetailsId,
@@ -36,7 +41,7 @@ export class DropsService {
     return dropsDtos.map((dropDto) => dropDto.Drop);
   }
 
-  createDrop(drop: DropsCreateDto): Promise<DropsGetAllItem> {
+  createDrop(drop: DropsCreateDto): Promise<DropsGetAllItemResponseDto> {
     const { name } = drop;
     return this.prisma.drop.create({
       data: {
@@ -45,7 +50,7 @@ export class DropsService {
     });
   }
 
-  deleteDrop(dropId: number): Promise<DropsGetAllItem> {
+  deleteDrop(dropId: number): Promise<DropsGetAllItemResponseDto> {
     return this.prisma.drop.delete({
       where: {
         id: dropId,

@@ -1,7 +1,7 @@
-import {DropsGetAllItem} from "./drops-get-all-item.type";
+import { DropsGetAllItemResponseDto } from "./drops-get-all-item.type";
 
-type DropsGetAll = {
-    drops: DropsGetAllItem
-}
+type DropsGetAllResponseDto = {
+  drops: DropsGetAllItemResponseDto[];
+};
 
-export {type DropsGetAll};
+export { type DropsGetAllResponseDto };
