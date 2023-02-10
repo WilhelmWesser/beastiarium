@@ -1,0 +1,39 @@
+type BeastDetails {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  beastId: Int!
+  description: String!
+  inGameDescription: String!
+  imgLink: String!
+  tacticDescription: String!
+  name: String!
+}
+
+input NewBeastDetails {
+  beastId: Int!
+  description: String!
+  inGameDescription: String!
+  imgLink: String!
+  tacticDescription: String!
+  name: String!
+}
+
+input UpdateBeastDetails {
+  id: ID!
+  description: String!
+  inGameDescription: String!
+  imgLink: String!
+  tacticDescription: String!
+  name: String!
+}
+
+extend type Query {
+  beastDetails(id: ID!): BeastDetails
+}
+
+extend type Mutation {
+  createBeastDetails(input: NewBeastDetails!): BeastDetails!
+  updateBeastDetails(input: UpdateBeastDetails!): BeastDetails!
+  deleteBeastDetails(id: ID!): BeastDetails!
+}

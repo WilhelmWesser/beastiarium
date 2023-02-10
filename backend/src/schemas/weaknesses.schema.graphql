@@ -1,0 +1,26 @@
+type Weakness {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
+}
+
+input NewWeakness {
+  name: String!
+}
+
+input UpdateWeakness {
+  id: ID!
+  name: String!
+}
+
+extend type Query {
+  weaknesses: [Weakness!]!
+  weakness(id: ID!): Weakness
+}
+
+extend type Mutation {
+  createWeakness(input: NewWeakness!): Weakness!
+  updateWeakness(input: UpdateWeakness!): Weakness!
+  deleteWeakness(id: ID!): Weakness!
+}
