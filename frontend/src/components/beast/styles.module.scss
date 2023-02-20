@@ -1,30 +1,55 @@
+.beastPageWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 5vh 0 5vh 0;
+  background-image: url("../../../public/beastiarium_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .beastPage {
   position: relative;
   z-index: 5;
-  background: #302b2b;
-  background-image: linear-gradient(90deg, #4c4e52, black);
-  flex-grow: 1;
+  background: #302b2b linear-gradient(90deg, #4c4e52, black);
+  background-size: 100% 100%;
   width: 50vw;
   height: 90vh;
-  margin: 5vh 45vw;
+  margin-left: 45vw;
   border-radius: 30px;
   box-shadow: -30px 0px 15px 8px #4c4e52;
   animation: side-slide 0.7s ease-out 0s 1;
 }
 
 @media (max-width: 1267px) {
+  .beastPageWrapper {
+    padding: 0;
+  }
+
   .beastPage {
     width: 80vw;
     margin: 5vh 10vw;
     box-shadow: none;
   }
+
+  @keyframes side-slide {
+    from {
+      transform: translateY(-100vh);
+    }
+    to {
+      transform: translateY(0vh);
+    }
+  }
+
 }
 
-@keyframes side-slide {
-  from {
-    transform: translateX(50vw);
-  }
-  to {
-    transform: translateX(0vw);
+@media (min-width: 1268px) {
+  @keyframes side-slide {
+    from {
+      transform: translateX(50vw);
+    }
+    to {
+      transform: translateX(0vw);
+    }
   }
 }

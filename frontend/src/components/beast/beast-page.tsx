@@ -4,7 +4,11 @@ import styles from "./styles.module.scss";
 type Props = {};
 
 const BeastPage: FC<Props> = () => {
-  return <div className={styles.beastPage}></div>;
+  return (
+    <div className={styles.beastPageWrapper}>
+      <div className={styles.beastPage}></div>
+    </div>
+  );
 };
 
 export { BeastPage };

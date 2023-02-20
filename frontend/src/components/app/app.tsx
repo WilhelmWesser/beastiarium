@@ -5,7 +5,7 @@ import { BeastPage } from "../components";
 import styles from "./styles.module.scss";
 import { randomNumberHelper } from "../../common/helpers/helpers";
 
-const viewPortWidth: number = window.visualViewport?.width ?? 1920;
+const viewPortWidth: number = window.visualViewport?.width!;
 const steamBlockWidth: number = viewPortWidth * 0.05;
 const quantityOfSteamBlocks = Math.ceil(viewPortWidth / steamBlockWidth);
 const steamsDelays: number[] = Array.from(Array(quantityOfSteamBlocks).keys());

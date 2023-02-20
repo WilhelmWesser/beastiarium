@@ -16,18 +16,21 @@ code {
     monospace;
 }
 
-html,
+html {
+  display: flex;
+  flex-direction: column;
+}
+
 body,
 #root,
 #app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  flex-grow: 1;
+}
+
+body {
   overflow: hidden;
 }
 
 main {
   flex-grow: 1;
-  background-image: url("../public/beastiarium_background.jpg");
-  background-repeat: no-repeat;
 }
