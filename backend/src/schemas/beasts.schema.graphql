@@ -1,0 +1,31 @@
+# import BeastClass from './beasts-classes.schema.graphql';
+
+type Beast {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  beastClass: BeastClass!
+  name: String!
+}
+
+input NewBeast {
+  beastClassId: Int!
+  name: String!
+}
+
+input UpdateBeast {
+  id: ID!
+  beastClassId: Int!
+  name: String!
+}
+
+extend type Query {
+  beasts: [Beast!]!
+  beast(id: ID!): Beast
+}
+
+extend type Mutation {
+  createBeast(input: NewBeast!): Beast!
+  updateBeast(input: UpdateBeast!): Beast!
+  deleteBeast(id: ID!): Beast!
+}

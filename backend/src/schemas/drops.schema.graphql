@@ -20,7 +20,7 @@ extend type Query {
 }
 
 extend type Mutation {
-  createDrop(input: NewDrop): Drop!
-  updateDrop(input: UpdateDrop): Drop!
+  createDrop(input: NewDrop!): Drop!
+  updateDrop(input: UpdateDrop!): Drop!
   deleteDrop(id: ID!): Drop!
 }

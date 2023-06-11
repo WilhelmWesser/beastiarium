@@ -1,4 +1,3 @@
-
 ### 📕 DB Schema
 
 ```mermaid
