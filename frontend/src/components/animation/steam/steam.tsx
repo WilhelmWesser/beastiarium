@@ -1,4 +1,4 @@
-import { FC, ISteamStyles } from "~/common/types/types";
+import { FC, ISteamStyles } from "@/types/types";
 import styles from "./styles.module.scss";
 
 type Props = {
