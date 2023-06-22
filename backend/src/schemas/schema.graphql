@@ -1,7 +1,7 @@
-type Query {
-
+type Schema {
+    query: Query
+    mutation: Mutation
 }
 
-type Mutation {
-    
-}
+type Query
+type Mutation

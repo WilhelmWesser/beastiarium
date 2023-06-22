@@ -11,25 +11,114 @@
 .beastPage {
   position: relative;
   z-index: 5;
-  background: #302b2b linear-gradient(90deg, #4c4e52, black);
+  background: #302b2b linear-gradient(90deg, var(--left-fade-border-color), black);
   background-size: 100% 100%;
   width: 50vw;
   height: 90vh;
   margin-left: 45vw;
-  border-radius: 30px;
-  box-shadow: -30px 0px 15px 8px #4c4e52;
+  border-radius: 50px;
+  box-shadow: -30px 0px 15px 8px var(--blur-border-color);
   animation: side-slide 0.7s ease-out 0s 1;
+  color: var(--font-color);
+  overflow-y: auto;
+}
+
+.beastAdditionalInfoWrapper {
+  float: right;
+  display: flex;
+  justify-content: end;
+  padding: 15px;
+}
+
+.beastImageWrapper {
+  float: right;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.beastName {
+  font-family: 'Fondamento', cursive;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.beastDescription {
+  text-align: justify;
+}
+
+.beastInGameDescription {
+  font-family: 'Fondamento', cursive;
+}
+
+.beastInfoTitleTextSeparator {
+  background-color: var(--font-color);
+  border-width: 2px;
+  margin-bottom: 25px;
+}
+
+.additionalInfoSectionsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 150px;
+  height: 35vh;
+  overflow-y: auto;
+}
+
+.additionalInfoSection {
+  border-width: 2px;
+  border-color: white;
+}
+
+.additionalInfoSectionTitle {
+  background: darkred;
+  text-align: center;
+  margin-bottom: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.additionalInfoSectionData {
+  background: darkred;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 797px) {
+  .beastAdditionalInfoWrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .beastImageWrapper {
+    flex-direction: column;
+  }
+
+  .additionalInfoSectionsList {
+    margin-top: 10px;
+    padding-top: 300px;
+  }
 }
 
 @media (max-width: 1267px) {
-  .beastPageWrapper {
-    padding: 0;
-  }
-
   .beastPage {
     width: 80vw;
     margin: 5vh 10vw;
     box-shadow: none;
+  }
+
+  .beastPageWrapper {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .additionalInfoSection {
+    max-width: 100%;
   }
 
   @keyframes side-slide {
