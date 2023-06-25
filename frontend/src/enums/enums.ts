@@ -1,0 +1,1 @@
+export { BeastsClasses } from './beasts/beasts-classes'

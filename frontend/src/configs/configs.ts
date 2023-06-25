@@ -1,0 +1,1 @@
+export { getBeastInfoStylesConfig } from './styles/beast-info-page'
