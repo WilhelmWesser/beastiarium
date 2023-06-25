@@ -23,6 +23,10 @@
   overflow-y: auto;
 }
 
+.beastPage::-webkit-scrollbar {
+  display: none;
+}
+
 .beastAdditionalInfoWrapper {
   float: right;
   display: flex;
