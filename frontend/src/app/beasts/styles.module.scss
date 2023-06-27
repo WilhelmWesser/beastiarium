@@ -1,0 +1,11 @@
+.beastsPageWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 5vh 0 5vh 0;
+  background-image: url("/beasts_page_bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
