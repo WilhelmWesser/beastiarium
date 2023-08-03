@@ -1,0 +1,15 @@
+.button {
+  padding: 5px;
+  border-style: solid;
+  border-color: var(--button-bg-color);
+  border-radius: 7.5px;
+  background: var(--button-bg-color);
+  color: var(--button-name-color);
+  font-size: 1.2rem;
+  font-family: 'Fondamento', cursive;
+  outline: none;
+
+  &:active {
+    border-color: darkcyan;
+  }
+}

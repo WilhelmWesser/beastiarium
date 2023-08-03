@@ -1,0 +1,51 @@
+.upperBeastsArea {
+  display: flex;
+
+  button {
+    margin-left: 10px;
+    width: 100px;
+  }
+}
+
+.searchBeastInputWrapper {
+  width: calc(95% - 100px);
+  margin-left: 35px;
+}
+
+.beastsPageWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 5vh 0 5vh 0;
+  background-image: url("/wp4817629.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  //filter: hue-rotate(180deg);
+}
+
+.beastsCardsArea {
+  width: 60vw;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beastsCardsList {
+  width: 100%;
+  overflow-y: scroll;
+  height: 85vh;
+  display: flex;
+  flex-wrap: wrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 1019px) {
+  .beastsCardsArea {
+    width: 100vw;
+  }
+}

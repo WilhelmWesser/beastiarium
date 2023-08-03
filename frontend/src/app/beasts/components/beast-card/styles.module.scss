@@ -1,0 +1,24 @@
+.beastCard {
+  cursor: pointer;
+  background: var(--card-color);
+  border-radius: 20px;
+  margin: 10px;
+  height: fit-content;
+}
+
+.imgWrapper {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.beastNameWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Fondamento', cursive;
+}
+
+.beastName {
+  text-align: center;
+  width: fit-content;
+}
