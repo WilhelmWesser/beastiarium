@@ -6,4 +6,8 @@ type BeastInfoPlotStyles = CSSProperties & {
   "--font-color": string;
 };
 
-export { type BeastInfoPlotStyles };
+type BeastCardFrameStyles = CSSProperties & {
+  "--card-color": string;
+}
+
+export { type BeastInfoPlotStyles, type BeastCardFrameStyles };

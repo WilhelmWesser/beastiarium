@@ -1,0 +1,12 @@
+.customInput {
+  border: solid 3px var(--custom-input-border-color);
+  border-radius: 7.5px;
+  height: 40px;
+  outline: none;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.customInput:focus {
+  border-color: darkcyan;
+}

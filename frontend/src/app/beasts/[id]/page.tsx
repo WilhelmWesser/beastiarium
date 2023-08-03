@@ -8,9 +8,7 @@ import { BeastInfoPlotStyles } from "@/types/styles/styles";
 type Props = {}
 
 const beastClass: BeastsClasses = BeastsClasses.BEAST
-
 const beastInfoStylesConfig: BeastInfoPlotStyles = getBeastInfoStylesConfig(beastClass)
-
 const BeastPage: FC<Props> = () => {
   return (
     <div className={styles.beastPageWrapper}>
