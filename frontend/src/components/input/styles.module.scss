@@ -1,12 +1,21 @@
-.customInput {
-  border: solid 3px var(--custom-input-border-color);
-  border-radius: 7.5px;
-  height: 40px;
+.input {
+  border: solid 3px var(--custom-input-border-color, firebrick);
+  border-radius: var(--custom-input-border-radius, 10px);
+  height: var(--custom-input-border-height, 40px);
   outline: none;
+  font-family: 'Fondamento', cursive;
   font-size: 1.3rem;
-  width: 100%;
+  width: var(--custom-input-border-width, 100%);
+  background: var(--custom-input-background-color, none);
+  position: var(--custom-input-position, relative);
+  opacity: var(--custom-input-opacity, 1);
+  margin: var(--custom-input-margin, 0);
+  border-top: var(--custom-input-top-border, solid);
+  border-bottom: var(--custom-input-bottom-border, solid);
+  border-left: var(--custom-input-left-border, solid);
+  border-right: var(--custom-input-right-border, solid);
 }
 
-.customInput:focus {
-  border-color: darkcyan;
+.input:focus {
+  border-color: green;
 }

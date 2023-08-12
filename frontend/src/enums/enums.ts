@@ -1,1 +1,2 @@
-export { BeastsClasses } from './beasts/beasts-classes'
+export { ButtonsNames } from './components/buttons-names.enum'
+export { BeastsClassesEnum } from './beasts/beasts-classes.enum'

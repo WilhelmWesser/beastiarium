@@ -2,12 +2,12 @@ import { FC } from "react";
 import styles from "./styles.module.scss"
 import Image from "next/image";
 import { getBeastInfoStylesConfig } from "@/configs/configs";
-import { BeastsClasses } from "@/enums/enums";
+import { BeastsClassesEnum } from "@/enums/enums";
 import { BeastInfoPlotStyles } from "@/types/styles/styles";
 
 type Props = {}
 
-const beastClass: BeastsClasses = BeastsClasses.BEAST
+const beastClass: BeastsClassesEnum = BeastsClassesEnum.BEAST
 const beastInfoStylesConfig: BeastInfoPlotStyles = getBeastInfoStylesConfig(beastClass)
 const BeastPage: FC<Props> = () => {
   return (

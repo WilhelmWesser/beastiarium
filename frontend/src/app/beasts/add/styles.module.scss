@@ -1,0 +1,41 @@
+.abrPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 5vh 0 5vh 0;
+  background-image: url("/abr-page.jpg");
+  background-size: 100vw 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: black;
+  box-shadow: -30px 0px 15px 8px black;
+  //filter: hue-rotate(180deg);
+}
+
+.abrFormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 7.5vh;
+  width: 65%;
+}
+
+
+@media (min-width: 1869px) {
+  .abrFormWrapper {
+    width: 80%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .abrFormWrapper {
+    width: 95%;
+  }
+}
+
+@media (min-width: 2750px) {
+  .abrFormWrapper {
+    width: 100%;
+  }
+}

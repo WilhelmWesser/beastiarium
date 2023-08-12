@@ -1,0 +1,37 @@
+.customTextArea {
+  border: solid 3px var(--custom-textarea-border-color, firebrick);
+  border-radius: var(--custom-textarea-border-radius, 7.5px);
+  min-height: 40px;
+  outline: none;
+  font-family: 'Fondamento', cursive;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 100%;
+  resize: none;
+  background: var(--custom-textarea-background-color, none);
+  border-top: var(--custom-textarea-top-border, solid);
+  border-bottom: var(--custom-textarea-bottom-border, solid);
+  border-left: var(--custom-textarea-left-border, solid);
+  border-right: var(--custom-textarea-right-border, solid);
+  height: var(--custom-textarea-height, 100%);
+}
+
+.customTextArea:focus {
+  border-color: green;
+}
+
+.customTextArea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.customTextArea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.customTextArea::-webkit-scrollbar-thumb {
+  background: var(--custom-textarea-scrollbar-color, black);
+}
+
+.customTextArea::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
