@@ -1,0 +1,1 @@
+export type { BeastCreateDto } from "shared/common/types/types"

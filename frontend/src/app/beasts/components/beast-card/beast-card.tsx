@@ -3,14 +3,14 @@
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss"
-import { BeastsClasses } from "@/enums/beasts/beasts-classes";
+import { BeastsClassesEnum } from "@/enums/beasts/beasts-classes.enum";
 import { BeastCardFrameStyles } from "@/types/styles/styles";
 import { getBeastCardFrameStyleConfig } from "@/configs/configs";
 
 type Props = {
   name: string;
   image: string;
-  beastClass: BeastsClasses;
+  beastClass: BeastsClassesEnum;
 }
 
 const BeastCard: FC<Props> = ({name, image, beastClass }) => {

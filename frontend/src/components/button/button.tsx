@@ -1,15 +1,7 @@
-import { CSSProperties, FC } from "react";
+import { FC } from "react";
+import { ButtonStyles } from "@/types/types";
+
 import styles from './styles.module.scss'
-
-type ButtonStyles = CSSProperties & {
-  "--button-bg-color": string,
-  "--button-name-color": string,
-}
-
-const defaultInputStyles: ButtonStyles = {
-  "--button-bg-color": 'firebrick',
-  "--button-name-color": 'black'
-}
 
 type Props = {
   name: string,
@@ -17,7 +9,7 @@ type Props = {
   stylesConfig?: ButtonStyles
 }
 const Button: FC<Props> = ({name, onClick, stylesConfig}) => {
-  return <button className={styles.button} onClick={onClick} style={stylesConfig ?? defaultInputStyles} dangerouslySetInnerHTML={{__html: name}}></button>
+  return <button className={styles.button} onClick={onClick} style={stylesConfig} dangerouslySetInnerHTML={{__html: name}}></button>
 }
 
 export {

@@ -1,10 +1,10 @@
 .button {
   padding: 5px;
   border-style: solid;
-  border-color: var(--button-bg-color);
+  border-color: var(--button-bg-color, firebrick);
   border-radius: 7.5px;
-  background: var(--button-bg-color);
-  color: var(--button-name-color);
+  background: var(--button-bg-color, firebrick);
+  color: var(--button-name-color, black);
   font-size: 1.2rem;
   font-family: 'Fondamento', cursive;
   outline: none;

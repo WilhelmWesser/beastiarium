@@ -3,7 +3,7 @@
 import { FC } from "react";
 import styles from "./styles.module.scss";
 import { BeastCard } from "./components/components";
-import { BeastsClasses } from "@/enums/beasts/beasts-classes";
+import { BeastsClassesEnum } from "@/enums/beasts/beasts-classes.enum";
 import { Button, Input } from "@/components/components";
 
 const filterIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-funnel\" viewBox=\"0 0 16 16\">\n" +
@@ -23,21 +23,21 @@ const BeastPage: FC<Props> = () => {
           </div>
           <div className={styles.beastsCardsArea}>
             <div className={styles.beastsCardsList}>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
-              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClasses.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
+              <BeastCard name={"Ghoul"} image={"/ghoul.jpg"} beastClass={BeastsClassesEnum.BEAST}/>
             </div>
           </div>
         </div>

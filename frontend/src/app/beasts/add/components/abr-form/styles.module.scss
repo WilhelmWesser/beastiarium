@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  justify-content: space-around;
+  height: 75vh;
+}
+
+.leftPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.leftPageUpperSection {
+  display: flex;
+  justify-content: space-around;
+}
+
+.beastPreviewSection {
+
+}
+
+.beastNameClassSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 1vw;
+}
+
+.rightPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.rightPageUpperSection {
+  max-width: 80%;
+}
+
+@media (max-width: 960px) {
+  .leftPageUpperSection {
+    flex-direction: column;
+  }
+
+  .rightPageUpperSection {
+    max-width: 70%;
+  }
+}

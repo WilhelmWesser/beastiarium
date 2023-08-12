@@ -1,24 +1,27 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, FC, FormEventHandler, HTMLInputTypeAttribute } from "react";
 import styles from './styles.module.scss';
-
-type InputStyles = CSSProperties & {
-  "--custom-input-border-color": string,
-}
-
-const defaultInputStyles: InputStyles = {
-  "--custom-input-border-color": 'firebrick'
-}
+import { forwardRefWrapper } from "@/helpers/helpers";
+import { ForwardRefExoticComponent, InputStyles, RefAttributes } from "@/types/types";
 
 type Props = {
-  onInput: () => void,
+  onInput: FormEventHandler<HTMLInputElement>,
   placeholder?: string,
-  stylesConfig?: InputStyles
+  stylesConfig?: InputStyles,
+  type?: HTMLInputTypeAttribute,
+  accept?: string,
 }
 
-const Input: FC<Props> = ({placeholder, onInput, stylesConfig}) => {
-  return  <input className={styles.customInput} onInput={() => onInput()} style={stylesConfig ?? defaultInputStyles} placeholder={placeholder}/>
+const DEFAULT_INPUT_TYPE: HTMLInputTypeAttribute = "text"
+
+const Input: FC<Props> = ({onInput, placeholder, stylesConfig, type}) => {
+  return  <input className={styles.input} onInput={onInput} style={stylesConfig} placeholder={placeholder} type={type ?? DEFAULT_INPUT_TYPE}/>
 }
+
+const FormInput: ForwardRefExoticComponent<Props & RefAttributes<unknown>> = forwardRefWrapper<unknown, Props>(({onInput, placeholder, stylesConfig, type, accept}, ref) => {
+  return  <input className={styles.input} onChange={onInput} onInput={onInput} style={stylesConfig} placeholder={placeholder} type={type ?? DEFAULT_INPUT_TYPE} accept={accept}/>
+})
 
 export {
-  Input
+  Input,
+  FormInput
 }

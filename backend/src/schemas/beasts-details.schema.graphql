@@ -4,7 +4,6 @@ type BeastDetails {
   updatedAt: String!
   beastId: Int!
   description: String!
-  inGameDescription: String!
   imgLink: String!
   tacticDescription: String!
   name: String!
@@ -13,7 +12,6 @@ type BeastDetails {
 input NewBeastDetails {
   beastId: Int!
   description: String!
-  inGameDescription: String!
   imgLink: String!
   tacticDescription: String!
   name: String!
@@ -22,7 +20,6 @@ input NewBeastDetails {
 input UpdateBeastDetails {
   id: ID!
   description: String!
-  inGameDescription: String!
   imgLink: String!
   tacticDescription: String!
   name: String!
