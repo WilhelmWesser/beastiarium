@@ -1,0 +1,21 @@
+.fieldValueItem {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
+  background: #cba570;
+  margin: 10px;
+  border: solid 20px;
+  border-radius: 20px;
+}
+
+.voted {
+  border-color: red;
+}
+
+.positionIconWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  padding: 10px;
+}

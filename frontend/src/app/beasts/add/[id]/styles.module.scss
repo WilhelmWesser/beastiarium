@@ -1,0 +1,29 @@
+.beastRequestPage {
+  display: flex;
+  //flex-grow: 1;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  background: #10171f;
+}
+
+.beastRequestPageBoard {
+  height: 70vh;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.beastRequestPageFieldsNamesList {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.beastRequestPageFieldsValuesList {
+  display: flex;
+  flex: 5;
+  flex-direction: column;
+  overflow-y: scroll;
+}
