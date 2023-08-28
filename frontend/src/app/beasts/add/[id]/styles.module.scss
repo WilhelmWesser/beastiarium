@@ -1,3 +1,6 @@
+@import '../../../variables';
+@import '../../../mixins';
+
 .beastRequestPage {
   display: flex;
   //flex-grow: 1;
@@ -18,12 +21,15 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .beastRequestPageFieldsValuesList {
   display: flex;
   flex: 5;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
+
+@include scrollbar-styling("beastRequestPageFieldsNamesList", #f1f1f1, $main-grey-color, #555);
+@include scrollbar-styling("beastRequestPageFieldsValuesList", #f1f1f1, $main-grey-color, #555);

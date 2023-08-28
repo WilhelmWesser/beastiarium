@@ -7,15 +7,16 @@ import { isLeadershipPosition } from "@/helpers/helpers";
 type Props = {
   content: string,
   onClick: () => void,
-  position: string
+  position: string,
+  isSelected: boolean,
 }
 
-const FieldValueItem: FC<Props> = ({content, onClick, position}) => {
+const FieldValueItem: FC<Props> = ({content, onClick, position, isSelected}) => {
   const isPositionLeaderPosition = isLeadershipPosition(position)
 
-  return <div className={styles.fieldValueItem} onClick={onClick}>
+  return <div className={isSelected ? styles.fieldValueItemSelected : styles.fieldValueItem} onClick={onClick}>
     {isPositionLeaderPosition && <div className={styles.positionIconWrapper}><Icon icon={position}/></div>}
-    <p>{content}</p>
+    <p className={styles.fieldValueItemContent}>{content}</p>
   </div>
 }
 

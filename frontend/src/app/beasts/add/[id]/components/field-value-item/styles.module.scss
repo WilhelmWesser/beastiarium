@@ -1,11 +1,24 @@
-.fieldValueItem {
+@import '../../../../../variables';
+
+%field-value {
   display: flex;
   flex-wrap: wrap;
   word-break: break-all;
-  background: #cba570;
   margin: 10px;
-  border: solid 20px;
-  border-radius: 20px;
+  border-radius: 10px;
+}
+
+.fieldValueItem {
+  @extend %field-value;
+  background: #cba570;
+  border: solid 10px #cba570;
+}
+
+.fieldValueItemSelected {
+  @extend %field-value;
+  color: $main-body-color;
+  background: $main-grey-color;
+  border: solid 10px $minor-grey-color;
 }
 
 .voted {
@@ -17,5 +30,9 @@
   display: flex;
   justify-content: flex-end;
   float: right;
+  padding: 10px;
+}
+
+.fieldValueItemContent {
   padding: 10px;
 }

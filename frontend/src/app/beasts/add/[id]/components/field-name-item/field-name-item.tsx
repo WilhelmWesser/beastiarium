@@ -7,7 +7,7 @@ type Props = {
 }
 
 const FieldNameItem: FC<Props> = ({name, onClick}) => {
-  return <div className={styles.field_name_item} onClick={() => onClick()}>
+  return <div className={`${styles.fieldNameItem} ${name === 'Name' && styles.selectedFieldNameItem}`} onClick={() => onClick()}>
     <h3>{name}</h3>
   </div>
 }

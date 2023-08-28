@@ -33,7 +33,8 @@ const fieldsNamesStub: {
 const fieldsValuesStub: {
   content: string,
   onClick: () => void,
-  votes: number
+  votes: number,
+  isSelected: boolean,
 }[] = [
   {
     content: "5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus eleifend tortor, eu porttitor neque fermentum eget. Cras ligula quam, lobortis ac malesuada eu, tempor eget ante. Quisque facilisis est a nisi pharetra, eget ornare velit venenatis. Phasellus accumsan luctus felis at accumsan. Suspendisse nec ultricies neque. Sed vel molestie felis. Vestibulum bibendum convallis dolor, ac feugiat nibh vulputate quis. Aliquam hendrerit nibh sit amet posuere blandit.\n" +
@@ -42,7 +43,8 @@ const fieldsValuesStub: {
       "\n" +
       "Morbi finibus diam velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In vel lorem faucibus, eleifend magna non, placerat diam. Fusce tincidunt, neque ac luctus rhoncus, dolor mi pharetra arcu, faucibus volutpat ex ipsum.",
     onClick: () => {},
-    votes: 1
+    votes: 1,
+    isSelected: false,
   },
   {
     content: "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus eleifend tortor, eu porttitor neque fermentum eget. Cras ligula quam, lobortis ac malesuada eu, tempor eget ante. Quisque facilisis est a nisi pharetra, eget ornare velit venenatis. Phasellus accumsan luctus felis at accumsan. Suspendisse nec ultricies neque. Sed vel molestie felis. Vestibulum bibendum convallis dolor, ac feugiat nibh vulputate quis. Aliquam hendrerit nibh sit amet posuere blandit.\n" +
@@ -51,7 +53,8 @@ const fieldsValuesStub: {
       "\n" +
       "Morbi finibus diam velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In vel lorem faucibus, eleifend magna non, placerat diam. Fusce tincidunt, neque ac luctus rhoncus, dolor mi pharetra arcu, faucibus volutpat ex ipsum.",
     onClick: () => {},
-    votes: 3
+    votes: 3,
+    isSelected: false,
   },
   {
     content: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus eleifend tortor, eu porttitor neque fermentum eget. Cras ligula quam, lobortis ac malesuada eu, tempor eget ante. Quisque facilisis est a nisi pharetra, eget ornare velit venenatis. Phasellus accumsan luctus felis at accumsan. Suspendisse nec ultricies neque. Sed vel molestie felis. Vestibulum bibendum convallis dolor, ac feugiat nibh vulputate quis. Aliquam hendrerit nibh sit amet posuere blandit.\n" +
@@ -60,7 +63,8 @@ const fieldsValuesStub: {
       "\n" +
       "Morbi finibus diam velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In vel lorem faucibus, eleifend magna non, placerat diam. Fusce tincidunt, neque ac luctus rhoncus, dolor mi pharetra arcu, faucibus volutpat ex ipsum.",
     onClick: () => {},
-    votes: 10
+    votes: 10,
+    isSelected: false,
   },
   {
     content: "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus eleifend tortor, eu porttitor neque fermentum eget. Cras ligula quam, lobortis ac malesuada eu, tempor eget ante. Quisque facilisis est a nisi pharetra, eget ornare velit venenatis. Phasellus accumsan luctus felis at accumsan. Suspendisse nec ultricies neque. Sed vel molestie felis. Vestibulum bibendum convallis dolor, ac feugiat nibh vulputate quis. Aliquam hendrerit nibh sit amet posuere blandit.\n" +
@@ -69,7 +73,8 @@ const fieldsValuesStub: {
       "\n" +
       "Morbi finibus diam velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In vel lorem faucibus, eleifend magna non, placerat diam. Fusce tincidunt, neque ac luctus rhoncus, dolor mi pharetra arcu, faucibus volutpat ex ipsum.",
     onClick: () => {},
-    votes: 9
+    votes: 9,
+    isSelected: false,
   },
   {
     content: "1  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus eleifend tortor, eu porttitor neque fermentum eget. Cras ligula quam, lobortis ac malesuada eu, tempor eget ante. Quisque facilisis est a nisi pharetra, eget ornare velit venenatis. Phasellus accumsan luctus felis at accumsan. Suspendisse nec ultricies neque. Sed vel molestie felis. Vestibulum bibendum convallis dolor, ac feugiat nibh vulputate quis. Aliquam hendrerit nibh sit amet posuere blandit.\n" +
@@ -78,7 +83,8 @@ const fieldsValuesStub: {
       "\n" +
       "Morbi finibus diam velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In vel lorem faucibus, eleifend magna non, placerat diam. Fusce tincidunt, neque ac luctus rhoncus, dolor mi pharetra arcu, faucibus volutpat ex ipsum.",
     onClick: () => {},
-    votes: 15
+    votes: 15,
+    isSelected: true,
   }
 ]
 
@@ -91,7 +97,7 @@ const AddBeastRequestPage: FC = () => {
         {fieldsNamesStub.map(({name, onClick}, index) => <FieldNameItem name={name} key={index} onClick={onClick}/>)}
       </div>
       <div className={styles.beastRequestPageFieldsValuesList}>
-        {sortedVariantsByVotes.map(({content, onClick, votes}, index) => <FieldValueItem content={content} key={index} onClick={onClick} position={`${index + 1}`}/>)}
+        {sortedVariantsByVotes.map(({content, onClick, votes, isSelected}, index) => <FieldValueItem content={content} key={index} onClick={onClick} position={`${index + 1}`} isSelected={isSelected}/>)}
       </div>
     </div>
   </div>
