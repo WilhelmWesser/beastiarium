@@ -14,23 +14,26 @@
   border: solid 10px #cba570;
 }
 
-.fieldValueItemSelected {
+.selectedFieldValueItem {
   @extend %field-value;
-  color: $main-body-color;
-  background: $main-grey-color;
-  border: solid 10px $minor-grey-color;
+  background: #cba570;
+  border: solid 10px $main-red-color;
 }
 
 .voted {
   border-color: red;
 }
 
-.positionIconWrapper {
+.fieldValueUpperSection {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  float: right;
-  padding: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 10px 10px 10px;
+}
+
+.topPadding {
+  padding-top: 10px;
 }
 
 .fieldValueItemContent {

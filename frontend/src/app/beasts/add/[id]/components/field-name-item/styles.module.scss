@@ -1,3 +1,5 @@
+@import '../../../../../variables';
+
 .fieldNameItem {
   display: flex;
   background: #cba570;
@@ -9,5 +11,5 @@
 }
 
 .selectedFieldNameItem {
-  border-color: yellow;
+  border-color: $main-yellow-color;
 }

@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { Icon } from "@/components/components";
+import { isLeadershipPosition } from "@/helpers/helpers";
+import { SelectionFlag } from "./components/components";
 
 import styles from './styles.module.scss'
-import { isLeadershipPosition } from "@/helpers/helpers";
 
 type Props = {
   content: string,
@@ -14,8 +15,8 @@ type Props = {
 const FieldValueItem: FC<Props> = ({content, onClick, position, isSelected}) => {
   const isPositionLeaderPosition = isLeadershipPosition(position)
 
-  return <div className={isSelected ? styles.fieldValueItemSelected : styles.fieldValueItem} onClick={onClick}>
-    {isPositionLeaderPosition && <div className={styles.positionIconWrapper}><Icon icon={position}/></div>}
+  return <div className={isSelected ? styles.selectedFieldValueItem : styles.fieldValueItem} onClick={onClick}>
+    <div className={styles.fieldValueUpperSection}>{isSelected && <SelectionFlag/>}  {isPositionLeaderPosition && <div className={styles.topPadding}><Icon icon={position}/></div>}</div>
     <p className={styles.fieldValueItemContent}>{content}</p>
   </div>
 }
