@@ -100,6 +100,15 @@ erDiagram
         int beast_details_id FK
         int weakness_id FK
     }
+    
+    add_beast_requests  ||--o| beasts : beast_id
+    add_beast_requests {
+        int id PK
+        dateTime created_at
+        dateTime updated_at
+        varchar status
+        int beast_id FK
+    }
 
 ```
 
