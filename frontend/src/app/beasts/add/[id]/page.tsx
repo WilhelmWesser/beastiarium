@@ -3,6 +3,7 @@
 import { FC } from "react";
 import styles from './styles.module.scss'
 import { FieldNameItem, FieldValueItem } from "./components/components";
+import { Button } from "@/components/components";
 
 const fieldsNamesStub: {
   name: string,
@@ -99,6 +100,9 @@ const AddBeastRequestPage: FC = () => {
       <div className={styles.beastRequestPageFieldsValuesList}>
         {sortedVariantsByVotes.map(({content, onClick, votes, isSelected}, index) => <FieldValueItem content={content} key={index} onClick={onClick} position={`${index + 1}`} isSelected={isSelected}/>)}
       </div>
+    </div>
+    <div className={styles.beastRequestPageLowerActionsPanel}>
+      <Button name={"Insert page"} onClick={() => console.log("Beast added!")} stylesConfig={{"--button-bg-color": "green", "--button-name-color": "white"}}/>
     </div>
   </div>
 }
