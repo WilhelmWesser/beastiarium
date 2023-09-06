@@ -1,3 +1,5 @@
+@import '../../app/mixins';
+
 .customTextArea {
   border: solid 3px var(--custom-textarea-border-color, firebrick);
   border-radius: var(--custom-textarea-border-radius, 7.5px);
@@ -20,18 +22,4 @@
   border-color: green;
 }
 
-.customTextArea::-webkit-scrollbar {
-  width: 10px;
-}
-
-.customTextArea::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.customTextArea::-webkit-scrollbar-thumb {
-  background: var(--custom-textarea-scrollbar-color, black);
-}
-
-.customTextArea::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+@include scrollbar-styling("customTextArea", #f1f1f1, var(--custom-textarea-scrollbar-color, black), #555);

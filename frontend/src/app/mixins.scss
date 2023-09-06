@@ -1,0 +1,17 @@
+@mixin scrollbar-styling($elementName, $scrollbarTrackColor, $scrollbarThumbColor, $scrollbarThumbHoverColor) {
+  .#{$elementName}::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .#{$elementName}::-webkit-scrollbar-track {
+    background: $scrollbarTrackColor;
+  }
+
+  .#{$elementName}::-webkit-scrollbar-thumb {
+    background: $scrollbarThumbColor;
+  }
+
+  .#{$elementName}::-webkit-scrollbar-thumb:hover {
+    background: $scrollbarThumbHoverColor;
+  }
+}

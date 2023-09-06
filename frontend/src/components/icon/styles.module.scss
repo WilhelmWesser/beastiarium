@@ -1,0 +1,19 @@
+@import '../../app/variables';
+
+.icon {
+  padding: 5px;
+}
+
+.leadershipPosition {
+  width: 30px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+  color: $main-body-color;
+  background: $main-grey-color;
+
+  &InvertedColors {
+    color: $main-grey-color;
+    background: $main-body-color;
+  }
+}

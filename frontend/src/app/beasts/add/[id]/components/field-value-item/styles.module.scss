@@ -1,0 +1,41 @@
+@import '../../../../../variables';
+
+%field-value {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.fieldValueItem {
+  @extend %field-value;
+  background: #cba570;
+  border: solid 10px #cba570;
+}
+
+.selectedFieldValueItem {
+  @extend %field-value;
+  background: #cba570;
+  border: solid 10px $main-red-color;
+}
+
+.voted {
+  border-color: red;
+}
+
+.fieldValueUpperSection {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 10px 10px 10px;
+}
+
+.topPadding {
+  padding-top: 10px;
+}
+
+.fieldValueItemContent {
+  padding: 10px;
+}
